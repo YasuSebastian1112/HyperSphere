@@ -1,0 +1,3 @@
+extends Sprite2D
+
+class_name Sprite_Animado_fijo
