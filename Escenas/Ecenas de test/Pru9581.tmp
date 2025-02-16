@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1s8641arvl4u"]
+
+[ext_resource type="PackedScene" uid="uid://d0b2chd5ljf5u" path="res://Escenas/Personajes/Yusepe/Yusepe.tscn" id="1_gvjpv"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_gfu8v"]
+a = Vector2(0, 650)
+b = Vector2(0, 0)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ob851"]
+a = Vector2(1160, 0)
+b = Vector2(0, 0)
+
+[node name="PruebaDeGravedad" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(26, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("SegmentShape2D_gfu8v")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1180, 23)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("SegmentShape2D_gfu8v")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(26, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("SegmentShape2D_ob851")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(26, 671)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("SegmentShape2D_ob851")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_gvjpv")]
+position = Vector2(589, 385)

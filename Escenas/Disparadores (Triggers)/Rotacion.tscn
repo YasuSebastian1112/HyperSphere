@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3yllta2l336p"]
+
+[ext_resource type="Script" path="res://Codigo/Rotacion.gd" id="1_gmbxu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fslx2"]
+
+[node name="Rotacion" type="Area2D"]
+script = ExtResource("1_gmbxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_fslx2")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
