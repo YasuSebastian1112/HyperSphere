@@ -46,6 +46,7 @@ velocidad = 250.0
 Direccion_de_la_gravedad = 2
 friccion = 0.1
 tiempo_de_coyote = 0.1
+cooldown_del_dash = 1.5
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 position = Vector2(595, 642)

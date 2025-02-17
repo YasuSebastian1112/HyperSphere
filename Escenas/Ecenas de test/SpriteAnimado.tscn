@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcu8jkcn1dg56"]
+
+[ext_resource type="Texture2D" uid="uid://cerrmbeh8r0ek" path="res://Recursos/Sprites/yusepe_idle.png" id="1_dj5n1"]
+[ext_resource type="Script" path="res://Codigo/SpriteAnimado1.gd" id="1_edhkt"]
+[ext_resource type="AudioStream" uid="uid://2p631aibpmjd" path="res://Recursos/Sonido/Musica/LoveTheme.ogg" id="3_8v8k3"]
+[ext_resource type="PackedScene" uid="uid://d0b2chd5ljf5u" path="res://Escenas/Personajes/Yusepe/Yusepe.tscn" id="4_ujr15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5008v"]
+size = Vector2(1280, 32)
+
+[node name="SpriteAnimado" type="Node2D"]
+
+[node name="Sprite_Animado_fijo" type="Sprite2D" parent="."]
+position = Vector2(626, 511)
+texture = ExtResource("1_dj5n1")
+hframes = 2
+vframes = 4
+script = ExtResource("1_edhkt")
+nodo_objetivo = NodePath("../Yusepe")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8v8k3")
+autoplay = true
+bus = &"PistaDeBase1"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(640, 620)
+shape = SubResource("RectangleShape2D_5008v")
+
+[node name="Yusepe" parent="." instance=ExtResource("4_ujr15")]
+position = Vector2(460, 547)

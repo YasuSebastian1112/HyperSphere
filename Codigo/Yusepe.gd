@@ -107,11 +107,12 @@ func cambiar_direccion_visual(direccion: int = 0) -> void:
 
 
 func control_de_animaciones() -> void:
-	if get_axis().x != 0 and en_suelo == true:
-		sprite_animado.play("Caminando")
+	if get_axis().x != 0:
+		if en_suelo:
+			sprite_animado.play("Caminando")
 		sprite_animado.scale.x = get_axis().x
-	else:
-		sprite_animado.play("Quieto")
+	elif en_suelo == false: sprite_animado.play("Cayendo")
+	else: sprite_animado.play("Quieto")
 
 # Función que inicia el dash según la gravedad activa con cooldown de 1 segundo
 func control_del_dash() -> void:

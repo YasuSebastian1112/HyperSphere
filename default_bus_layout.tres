@@ -1,0 +1,64 @@
+[gd_resource type="AudioBusLayout" load_steps=6 format=3 uid="uid://6jvntqhqupr4"]
+
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_p37nd"]
+resource_name = "SpectrumAnalyzer"
+
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_s61mp"]
+resource_name = "SpectrumAnalyzer"
+
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_cc818"]
+resource_name = "SpectrumAnalyzer"
+
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_7jqtc"]
+resource_name = "SpectrumAnalyzer"
+
+[sub_resource type="AudioEffectSpectrumAnalyzer" id="AudioEffectSpectrumAnalyzer_lp2co"]
+resource_name = "SpectrumAnalyzer"
+
+[resource]
+bus/1/name = &"Musica"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectSpectrumAnalyzer_p37nd")
+bus/1/effect/0/enabled = true
+bus/2/name = &"PistaDeBase1"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Musica"
+bus/2/effect/0/effect = SubResource("AudioEffectSpectrumAnalyzer_s61mp")
+bus/2/effect/0/enabled = true
+bus/3/name = &"PistaDeBase2"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"Musica"
+bus/3/effect/0/effect = SubResource("AudioEffectSpectrumAnalyzer_cc818")
+bus/3/effect/0/enabled = true
+bus/4/name = &"PistaDeBase3"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"Musica"
+bus/4/effect/0/effect = SubResource("AudioEffectSpectrumAnalyzer_7jqtc")
+bus/4/effect/0/enabled = true
+bus/5/name = &"PistaDeExtra"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &"Musica"
+bus/5/effect/0/effect = SubResource("AudioEffectSpectrumAnalyzer_lp2co")
+bus/5/effect/0/enabled = true
+bus/6/name = &"EfectosDeSonido"
+bus/6/solo = false
+bus/6/mute = false
+bus/6/bypass_fx = false
+bus/6/volume_db = 0.0
+bus/6/send = &"Master"
