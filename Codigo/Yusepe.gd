@@ -7,6 +7,7 @@ class_name Yusepe
 @onready var colision : CollisionShape2D = $CollisionShape2D
 @onready var sprite_animado : AnimatedSprite2D = $AnimatedSprite2D
 @onready var coyote : Timer = $Temporizadores/Coyote
+@onready var particulas_de_caminar : CPUParticles2D = $AnimatedSprite2D/Caminar
 
 @export_category("Fisicas") #Todas las propiedades relacionadas a las fisicas 
 @export var velocidad : float = 200.0
@@ -110,9 +111,10 @@ func control_de_animaciones() -> void:
 	if get_axis().x != 0:
 		if en_suelo:
 			sprite_animado.play("Caminando")
+			particulas_de_caminar.emitting = true
 		sprite_animado.scale.x = get_axis().x
 	elif en_suelo == false: sprite_animado.play("Cayendo")
-	else: sprite_animado.play("Quieto")
+	else: sprite_animado.play("Quieto"); particulas_de_caminar.emitting = false
 
 # Función que inicia el dash según la gravedad activa con cooldown de 1 segundo
 func control_del_dash() -> void:
