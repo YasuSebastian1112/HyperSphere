@@ -17,11 +17,10 @@ class_name Yusepe
 @export var fuerza_de_salto : float = 300.0
 @export_enum("Abajo", "Arriba", "Izquierda", "Derecha") var Direccion_de_la_gravedad : int = 0
 @export_range(0,1) var friccion : float = 1.0
-
 @export_category("Control")
 @export var saltos_maximos : int = 2
 @export var tiempo_de_coyote : float = 0.15
-
+@export var vida : float = 10.0
 """Propiedades de Dash"""
 @export_category("Dash")
 @export var puede_dashear : bool = true       # Indica si se puede iniciar el dash
@@ -160,13 +159,12 @@ func _input(_event: InputEvent) -> void:
 		control_del_dash()
 
 """Señales"""
-func _on_coyote_timeout():
+
+func _on_coyote_timeout(): # Se le quita uno a saltos maximos al ya quedarse sin tiempo
 	if saltos_restantes >= saltos_maximos:
 		saltos_restantes -= 1
 
 func _on_hitbox_body_entered(body):
 	match body:
-		Enemigo_basico: pass
-		Trampa_basica: pass
 		TileMap: pass
 

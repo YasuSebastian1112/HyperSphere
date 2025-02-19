@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcu8jkcn1dg56"]
+[gd_scene load_steps=6 format=3 uid="uid://bcu8jkcn1dg56"]
 
 [ext_resource type="Texture2D" uid="uid://cerrmbeh8r0ek" path="res://Recursos/Sprites/yusepe_idle.png" id="1_dj5n1"]
 [ext_resource type="Script" path="res://Codigo/SpriteAnimado1.gd" id="1_edhkt"]
+[ext_resource type="Script" path="res://Codigo/Enemigos (base).gd" id="4_nntwn"]
 [ext_resource type="PackedScene" uid="uid://d0b2chd5ljf5u" path="res://Escenas/Personajes/Yusepe/Yusepe.tscn" id="4_ujr15"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5008v"]
@@ -28,3 +29,6 @@ shape = SubResource("RectangleShape2D_5008v")
 
 [node name="Yusepe" parent="." instance=ExtResource("4_ujr15")]
 position = Vector2(460, 547)
+
+[node name="Enemigo_basico" type="CharacterBody2D" parent="."]
+script = ExtResource("4_nntwn")

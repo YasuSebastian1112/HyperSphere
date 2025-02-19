@@ -9,7 +9,6 @@ class_name Sprite_Animado_fijo
 @export_group("Configuraciones")
 @export var escala_minima : float = 1.0
 @export var escala_maxima : float = 2.0
-@export var rotacion_minima : float = 0
 @export_group("Por Sonido")
 @export var activar_sonido : bool = false :
 	set(value):
