@@ -1,0 +1,124 @@
+[gd_scene load_steps=17 format=3 uid="uid://sp46yyeuemcb"]
+
+[ext_resource type="Texture2D" uid="uid://7rcbrq1iwqr8" path="res://Recursos/Sprites/yusepe_walk.png" id="1_wvsec"]
+[ext_resource type="Script" path="res://Codigo/EvilYusepe.gd" id="1_y884u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yom8s"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7opc"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gg3r4"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdfo6"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3gxr"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5mjo"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i36ob"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehdos"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufv11"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxawr"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opof1"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xmyn"]
+atlas = ExtResource("1_wvsec")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_883a5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yom8s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7opc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gg3r4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdfo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3gxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5mjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i36ob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehdos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufv11")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxawr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opof1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xmyn")
+}],
+"loop": true,
+"name": &"Caminar",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohka5"]
+size = Vector2(19, 42)
+
+[node name="EvilYusepe" type="CharacterBody2D"]
+collision_layer = 10
+collision_mask = 10
+script = ExtResource("1_y884u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_883a5")
+animation = &"Caminar"
+
+[node name="Suelo" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(8, 0)
+target_position = Vector2(96, 96)
+
+[node name="Muro" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(0, -32)
+target_position = Vector2(32, 0)
+
+[node name="Plataforma_cercana" type="RayCast2D" parent="AnimatedSprite2D"]
+position = Vector2(0, 40)
+target_position = Vector2(128, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_ohka5")

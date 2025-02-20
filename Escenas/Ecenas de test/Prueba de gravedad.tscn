@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c1s8641arvl4u"]
+[gd_scene load_steps=7 format=3 uid="uid://c1s8641arvl4u"]
 
 [ext_resource type="PackedScene" uid="uid://d0b2chd5ljf5u" path="res://Escenas/Personajes/Yusepe/Yusepe.tscn" id="1_gvjpv"]
 [ext_resource type="PackedScene" uid="uid://d3yllta2l336p" path="res://Escenas/Disparadores (Triggers)/Rotacion.tscn" id="2_qasx5"]
+[ext_resource type="PackedScene" uid="uid://sp46yyeuemcb" path="res://Escenas/Personajes/Enemigos/EvilYusepe.tscn" id="3_erhmt"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gfu8v"]
 a = Vector2(0, 650)
@@ -18,44 +19,53 @@ size = Vector2(200, 20)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(26, 24)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("SegmentShape2D_gfu8v")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1180, 23)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 shape = SubResource("SegmentShape2D_gfu8v")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(26, 24)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 shape = SubResource("SegmentShape2D_ob851")
 
 [node name="StaticBody2D4" type="StaticBody2D" parent="."]
 position = Vector2(26, 671)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 shape = SubResource("SegmentShape2D_ob851")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_gvjpv")]
 position = Vector2(589, 385)
-velocidad = 250.0
-Direccion_de_la_gravedad = 2
-friccion = 0.1
-tiempo_de_coyote = 0.1
 cooldown_del_dash = 1.5
 
 [node name="StaticBody2D5" type="StaticBody2D" parent="."]
 position = Vector2(595, 642)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(7, -110)
 shape = SubResource("RectangleShape2D_sqdnb")
 
 [node name="StaticBody2D8" type="StaticBody2D" parent="."]
-position = Vector2(570, 47)
+position = Vector2(795, 565)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
 shape = SubResource("RectangleShape2D_sqdnb")
@@ -63,28 +73,43 @@ shape = SubResource("RectangleShape2D_sqdnb")
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
 position = Vector2(465, 366)
 rotation = 1.5708
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
 shape = SubResource("RectangleShape2D_sqdnb")
 
 [node name="StaticBody2D7" type="StaticBody2D" parent="."]
-position = Vector2(796, 357)
-rotation = 1.5708
+position = Vector2(1015, 631)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
 shape = SubResource("RectangleShape2D_sqdnb")
 
 [node name="Rotacion" parent="." instance=ExtResource("2_qasx5")]
 position = Vector2(42, 659)
+collision_layer = 9
+collision_mask = 9
 
 [node name="Rotacion2" parent="." instance=ExtResource("2_qasx5")]
 position = Vector2(1166, 656)
+collision_layer = 9
+collision_mask = 9
 Direccion_de_la_gravedad = 3
 
 [node name="Rotacion3" parent="." instance=ExtResource("2_qasx5")]
 position = Vector2(1165, 39)
+collision_layer = 9
+collision_mask = 9
 Direccion_de_la_gravedad = 1
 
 [node name="Rotacion4" parent="." instance=ExtResource("2_qasx5")]
 position = Vector2(49, 60)
+collision_layer = 9
+collision_mask = 9
 Direccion_de_la_gravedad = 2
+
+[node name="EvilYusepe" parent="." instance=ExtResource("3_erhmt")]
+position = Vector2(614, 491)
+velocidad = 150.0
