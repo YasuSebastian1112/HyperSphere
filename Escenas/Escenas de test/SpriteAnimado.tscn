@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bcu8jkcn1dg56"]
 
-[ext_resource type="Texture2D" uid="uid://cerrmbeh8r0ek" path="res://Recursos/Sprites/yusepe_idle.png" id="1_dj5n1"]
-[ext_resource type="Script" path="res://Codigo/SpriteAnimado1.gd" id="1_edhkt"]
-[ext_resource type="PackedScene" uid="uid://d0b2chd5ljf5u" path="res://Escenas/Personajes/Yusepe/Yusepe.tscn" id="4_ujr15"]
+[ext_resource type="Texture2D" uid="uid://cerrmbeh8r0ek" path="res://Recursos/Sprites/yusepe_idle.png" id="1_71rvg"]
+[ext_resource type="Script" path="res://Codigo/SpriteAnimado1.gd" id="2_ogrxd"]
+[ext_resource type="PackedScene" uid="uid://d0b2chd5ljf5u" path="res://Escenas/Personajes/Yusepe/Yusepe.tscn" id="3_akyu1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5008v"]
 size = Vector2(1280, 32)
@@ -11,10 +11,10 @@ size = Vector2(1280, 32)
 
 [node name="Sprite_Animado_fijo" type="Sprite2D" parent="."]
 position = Vector2(626, 511)
-texture = ExtResource("1_dj5n1")
+texture = ExtResource("1_71rvg")
 hframes = 2
 vframes = 4
-script = ExtResource("1_edhkt")
+script = ExtResource("2_ogrxd")
 activar_proximidad = true
 activar_escala = true
 activar_rotacion = true
@@ -26,5 +26,5 @@ nodo_objetivo = NodePath("../Yusepe")
 position = Vector2(640, 620)
 shape = SubResource("RectangleShape2D_5008v")
 
-[node name="Yusepe" parent="." instance=ExtResource("4_ujr15")]
+[node name="Yusepe" parent="." instance=ExtResource("3_akyu1")]
 position = Vector2(460, 547)

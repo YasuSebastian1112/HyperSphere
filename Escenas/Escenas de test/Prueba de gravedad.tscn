@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c1s8641arvl4u"]
 
-[ext_resource type="PackedScene" uid="uid://d0b2chd5ljf5u" path="res://Escenas/Personajes/Yusepe/Yusepe.tscn" id="1_gvjpv"]
-[ext_resource type="PackedScene" uid="uid://d3yllta2l336p" path="res://Escenas/Disparadores (Triggers)/Rotacion.tscn" id="2_qasx5"]
-[ext_resource type="PackedScene" uid="uid://sp46yyeuemcb" path="res://Escenas/Personajes/Enemigos/EvilYusepe.tscn" id="3_erhmt"]
+[ext_resource type="PackedScene" uid="uid://d0b2chd5ljf5u" path="res://Escenas/Personajes/Yusepe/Yusepe.tscn" id="1_13egd"]
+[ext_resource type="PackedScene" uid="uid://d3yllta2l336p" path="res://Escenas/Disparadores (Triggers)/Rotacion.tscn" id="2_ihnw6"]
+[ext_resource type="PackedScene" uid="uid://sp46yyeuemcb" path="res://Escenas/Personajes/Enemigos/EvilYusepe.tscn" id="3_k5gfh"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_gfu8v"]
 a = Vector2(0, 650)
@@ -49,7 +49,7 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
 shape = SubResource("SegmentShape2D_ob851")
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("1_gvjpv")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_13egd")]
 position = Vector2(589, 385)
 cooldown_del_dash = 1.5
 
@@ -87,29 +87,29 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
 shape = SubResource("RectangleShape2D_sqdnb")
 
-[node name="Rotacion" parent="." instance=ExtResource("2_qasx5")]
+[node name="Rotacion" parent="." instance=ExtResource("2_ihnw6")]
 position = Vector2(42, 659)
 collision_layer = 9
 collision_mask = 9
 
-[node name="Rotacion2" parent="." instance=ExtResource("2_qasx5")]
+[node name="Rotacion2" parent="." instance=ExtResource("2_ihnw6")]
 position = Vector2(1166, 656)
 collision_layer = 9
 collision_mask = 9
 Direccion_de_la_gravedad = 3
 
-[node name="Rotacion3" parent="." instance=ExtResource("2_qasx5")]
+[node name="Rotacion3" parent="." instance=ExtResource("2_ihnw6")]
 position = Vector2(1165, 39)
 collision_layer = 9
 collision_mask = 9
 Direccion_de_la_gravedad = 1
 
-[node name="Rotacion4" parent="." instance=ExtResource("2_qasx5")]
+[node name="Rotacion4" parent="." instance=ExtResource("2_ihnw6")]
 position = Vector2(49, 60)
 collision_layer = 9
 collision_mask = 9
 Direccion_de_la_gravedad = 2
 
-[node name="EvilYusepe" parent="." instance=ExtResource("3_erhmt")]
+[node name="EvilYusepe" parent="." instance=ExtResource("3_k5gfh")]
 position = Vector2(614, 491)
 velocidad = 150.0
