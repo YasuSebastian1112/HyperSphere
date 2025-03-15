@@ -3,11 +3,11 @@ extends Control
 """Propiedades"""
 
 @onready var iniciar : Label = $Iniciar
-@onready var botones : VBoxContainer = $Botones
-@onready var jugar : Button = $Botones/Jugar
-@onready var configuracion : Button = $Botones/Configuracion
-@onready var extras : Button = $Botones/Extras
-@onready var salir : Button = $Botones/Salir
+@onready var botones : VBoxContainer = $Botones1
+@onready var jugar : Button = $Botones1/Jugar
+@onready var configuracion : Button = $Botones1/Configuracion
+@onready var extras : Button = $Botones1/Extras
+@onready var salir : Button = $Botones1/Salir
 
 var iniciado : bool = false
 var en_grab : bool = false
@@ -39,3 +39,12 @@ func swichear_botones(valor : bool) -> void:
 func _on_jugar_pressed() -> void:
 	print("SsO")
 	pass # Replace with function body.
+
+func _on_configuracion_pressed():
+	pass # Replace with function body.
+
+func _on_extras_pressed():
+	pass # Replace with function body.
+
+func _on_salir_pressed():
+	get_tree().quit()

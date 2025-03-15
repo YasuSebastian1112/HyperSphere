@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7mno00mgtgne"]
+
+[ext_resource type="FontFile" uid="uid://cuwmtmdhl5634" path="res://Recursos/Fuentes/upheavtt.ttf" id="1_ii0oi"]
+[ext_resource type="Script" path="res://Codigo/Perfil.gd" id="1_wc87q"]
+
+[node name="Perfil" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 980.0
+offset_bottom = 160.0
+script = ExtResource("1_wc87q")
+
+[node name="Datos" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Nombre" type="Label" parent="Datos"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ii0oi")
+theme_override_font_sizes/font_size = 40
+text = "Nombre del perfil"

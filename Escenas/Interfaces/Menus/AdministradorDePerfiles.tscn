@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://d20womhps1s4e"]
+
+[ext_resource type="Script" path="res://Codigo/AdministradorDePerfiles.gd" id="1_uemrx"]
+[ext_resource type="PackedScene" uid="uid://c7mno00mgtgne" path="res://Escenas/Interfaces/Elementos/Perfil.tscn" id="2_ol527"]
+
+[node name="AdministradorDePerfiles" type="CanvasLayer"]
+
+[node name="Interfaz" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uemrx")
+perfil = ExtResource("2_ol527")
+
+[node name="Contenedor_de_tablas" type="TabContainer" parent="Interfaz"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -300.0
+offset_right = 500.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Tabla" type="TabBar" parent="Interfaz/Contenedor_de_tablas"]
+layout_mode = 2
+
+[node name="Perfiles" type="ScrollContainer" parent="Interfaz/Contenedor_de_tablas/Tabla"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Contenedor" type="VBoxContainer" parent="Interfaz/Contenedor_de_tablas/Tabla/Perfiles"]
+layout_mode = 2

@@ -9,12 +9,24 @@ func salvar_datos(datos:Dictionary, ruta:String) -> void:
 	file.store_var(datos) # guardar datos
 	file = null # cerrar archivo
 
-func cargar_datos(datos:Dictionary, ruta:String) -> void:
+func cargar_datos(datos:Dictionary, ruta:String) -> Dictionary:
 	if FileAccess.file_exists(ruta): #Verificar la existencia del archivo
 		var file = FileAccess.open(ruta, FileAccess.READ) # Dar permisos de escritura
 		var ndatos = file.get_var() # cargar datos en una variable
 		file = null #cerrar archivo
-		combinar_diccionarios(datos, ndatos)
+		return combinar_diccionarios(datos, ndatos)
+	else:
+		return datos
+
+func borrar_archivo(ruta:String) -> void:
+	if FileAccess.file_exists(ruta):
+		var error = DirAccess.remove_absolute(ruta)
+		if error == OK:
+			print("Partida eliminada: " + ruta)
+		else:
+			print("Error al intentar borrar la partida.")
+	else:
+		print("No se encontró el archivo de guardado.")
 
 func combinar_diccionarios(datos_predeterminados: Dictionary, datos_cargados: Dictionary) -> Dictionary: # añadir nuevos datos
 	for key in datos_predeterminados.keys():
@@ -26,3 +38,4 @@ func combinar_diccionarios(datos_predeterminados: Dictionary, datos_cargados: Di
 				# si el dato esta entonces carga su valor
 				datos_predeterminados[key] = datos_cargados[key]
 	return datos_predeterminados
+

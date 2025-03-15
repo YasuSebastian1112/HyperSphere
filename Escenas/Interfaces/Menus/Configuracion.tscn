@@ -1,0 +1,213 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs5kmfxscjcs4"]
+
+[ext_resource type="Script" path="res://Codigo/Accesibilidad (Configuraciones).gd" id="1_31non"]
+[ext_resource type="Script" path="res://Codigo/Configuracion.gd" id="1_q85ra"]
+
+[node name="Configuracion" type="CanvasLayer"]
+
+[node name="Configuracion" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q85ra")
+
+[node name="Configuraciones" type="TabContainer" parent="Configuracion"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -300.0
+offset_right = 500.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+
+[node name="video" type="TabBar" parent="Configuracion/Configuraciones"]
+layout_mode = 2
+
+[node name="Configuraciones" type="VBoxContainer" parent="Configuracion/Configuraciones/video"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -492.0
+offset_top = -271.5
+offset_right = 492.0
+offset_bottom = 271.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Resolucion" type="HBoxContainer" parent="Configuracion/Configuraciones/video/Configuraciones"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Configuracion/Configuraciones/video/Configuraciones/Resolucion"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+text = "RESOLUCION"
+
+[node name="OptionButton" type="OptionButton" parent="Configuracion/Configuraciones/video/Configuraciones/Resolucion"]
+layout_mode = 2
+item_count = 2
+selected = 0
+popup/item_0/text = "1280x720"
+popup/item_0/id = 0
+popup/item_1/text = ""
+popup/item_1/id = 1
+
+[node name="Modo_de_ventana" type="HBoxContainer" parent="Configuracion/Configuraciones/video/Configuraciones"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Configuracion/Configuraciones/video/Configuraciones/Modo_de_ventana"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+text = "MODO DE VENTANA"
+
+[node name="OptionButton" type="OptionButton" parent="Configuracion/Configuraciones/video/Configuraciones/Modo_de_ventana"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Particulas" type="HBoxContainer" parent="Configuracion/Configuraciones/video/Configuraciones"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Configuracion/Configuraciones/video/Configuraciones/Particulas"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+text = "PARTICULAS"
+
+[node name="CheckButton" type="CheckButton" parent="Configuracion/Configuraciones/video/Configuraciones/Particulas"]
+layout_mode = 2
+
+[node name="Fondos_detallados" type="HBoxContainer" parent="Configuracion/Configuraciones/video/Configuraciones"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Configuracion/Configuraciones/video/Configuraciones/Fondos_detallados"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+text = "FONDOS DETALLADOS"
+
+[node name="CheckButton" type="CheckButton" parent="Configuracion/Configuraciones/video/Configuraciones/Fondos_detallados"]
+layout_mode = 2
+
+[node name="controles" type="TabBar" parent="Configuracion/Configuraciones"]
+visible = false
+layout_mode = 2
+
+[node name="sonido" type="TabBar" parent="Configuracion/Configuraciones"]
+visible = false
+layout_mode = 2
+
+[node name="Configuraciones" type="VBoxContainer" parent="Configuracion/Configuraciones/sonido"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -492.0
+offset_top = -276.5
+offset_right = 492.0
+offset_bottom = 276.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Master" type="HBoxContainer" parent="Configuracion/Configuraciones/sonido/Configuraciones"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Configuracion/Configuraciones/sonido/Configuraciones/Master"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+text = "MASTER"
+
+[node name="HSlider" type="HSlider" parent="Configuracion/Configuraciones/sonido/Configuraciones/Master"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Musica" type="HBoxContainer" parent="Configuracion/Configuraciones/sonido/Configuraciones"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Configuracion/Configuraciones/sonido/Configuraciones/Musica"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+text = "MUSICA"
+
+[node name="HSlider" type="HSlider" parent="Configuracion/Configuraciones/sonido/Configuraciones/Musica"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Efectos_de_sonido" type="HBoxContainer" parent="Configuracion/Configuraciones/sonido/Configuraciones"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Configuracion/Configuraciones/sonido/Configuraciones/Efectos_de_sonido"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+text = "EFECTOS DE SONIDO"
+
+[node name="HSlider" type="HSlider" parent="Configuracion/Configuraciones/sonido/Configuraciones/Efectos_de_sonido"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="accesibilidad" type="TabBar" parent="Configuracion/Configuraciones"]
+visible = false
+layout_mode = 2
+script = ExtResource("1_31non")
+
+[node name="Configuraciones" type="VBoxContainer" parent="Configuracion/Configuraciones/accesibilidad"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -492.0
+offset_top = -276.5
+offset_right = 492.0
+offset_bottom = 276.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Idioma" type="HBoxContainer" parent="Configuracion/Configuraciones/accesibilidad/Configuraciones"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Configuracion/Configuraciones/accesibilidad/Configuraciones/Idioma"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+text = "idioma"
+
+[node name="Idioma" type="OptionButton" parent="Configuracion/Configuraciones/accesibilidad/Configuraciones/Idioma"]
+layout_mode = 2
+item_count = 3
+selected = 0
+popup/item_0/text = "ESPAÑOL"
+popup/item_0/id = 0
+popup/item_1/text = "ENGLISH"
+popup/item_1/id = 1
+popup/item_2/text = "FRANÇAIS"
+popup/item_2/id = 2
+
+[node name="Salir" type="Button" parent="Configuracion"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "salir"
+
+[connection signal="item_selected" from="Configuracion/Configuraciones/accesibilidad/Configuraciones/Idioma/Idioma" to="Configuracion/Configuraciones/accesibilidad" method="_on_idioma_item_selected"]
+[connection signal="pressed" from="Configuracion/Salir" to="Configuracion" method="_on_salir_pressed"]

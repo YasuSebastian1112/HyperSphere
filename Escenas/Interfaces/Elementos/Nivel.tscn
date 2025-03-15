@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://ql0hnnf00hk0"]
+[gd_scene load_steps=2 format=3 uid="uid://ql0hnnf00hk0"]
+
+[ext_resource type="Script" path="res://Codigo/Nivel (Boton).gd" id="1_gvd0w"]
 
 [node name="Nivel" type="TextureButton"]
+script = ExtResource("1_gvd0w")
+nivel = "Nivel 2"

@@ -73,7 +73,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Botones" type="VBoxContainer" parent="."]
+[node name="Botones1" type="VBoxContainer" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 7
@@ -89,7 +89,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_tdwl5")
 
-[node name="Jugar" type="Button" parent="Botones"]
+[node name="Jugar" type="Button" parent="Botones1"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.918091, 0.918091, 0.918091, 1)
 theme_override_colors/font_pressed_color = Color(0.800145, 0.593513, 1.92523e-07, 1)
@@ -104,7 +104,7 @@ action_mode = 0
 text = "Jugar"
 flat = true
 
-[node name="Configuracion" type="Button" parent="Botones"]
+[node name="Configuracion" type="Button" parent="Botones1"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.918091, 0.918091, 0.918091, 1)
 theme_override_colors/font_pressed_color = Color(0.800145, 0.593513, 1.92523e-07, 1)
@@ -119,7 +119,7 @@ action_mode = 0
 text = "Configuracion"
 flat = true
 
-[node name="Extras" type="Button" parent="Botones"]
+[node name="Extras" type="Button" parent="Botones1"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.918091, 0.918091, 0.918091, 1)
 theme_override_colors/font_pressed_color = Color(0.800145, 0.593513, 1.92523e-07, 1)
@@ -134,7 +134,7 @@ action_mode = 0
 text = "Extras"
 flat = true
 
-[node name="Salir" type="Button" parent="Botones"]
+[node name="Salir" type="Button" parent="Botones1"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.918091, 0.918091, 0.918091, 1)
 theme_override_colors/font_pressed_color = Color(0.800145, 0.593513, 1.92523e-07, 1)
@@ -149,4 +149,7 @@ action_mode = 0
 text = "salir"
 flat = true
 
-[connection signal="pressed" from="Botones/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Botones1/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Botones1/Configuracion" to="." method="_on_configuracion_pressed"]
+[connection signal="pressed" from="Botones1/Extras" to="." method="_on_extras_pressed"]
+[connection signal="pressed" from="Botones1/Salir" to="." method="_on_salir_pressed"]
